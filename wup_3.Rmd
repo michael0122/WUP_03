@@ -1,7 +1,7 @@
 ---
 title: "Alcohol vs Seat choice"
-author: "Your Name"
-date: "Fall 2020"
+author: "Michael Abdalla"
+date: "summer 2021"
 output: html_document
 ---
 
@@ -28,16 +28,47 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
-  
-### get fancy  
+```{r}
+boxplot(alcohol~Seat,data=davisdata)
+```
 
+it appears that people that are sitting in the back drink more thank who are found in the middle and the front seats and the people that are in the middle drink more than who are in the front. over 75% of the people who sit in the back drink more alcohol more than any one sitting in the middle and front.  
+
+### get fancy  
+```{r}
+basicCN <- ggplot(davisdata,aes(x=Seat,y=alcohol))
+
+basicCN + geom_boxplot()
+```
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+it appears that using these data we can reject the null hypothesis. based on theses box plots there is a difference between the people who sit in the back and the people who sit in the middle and front when it comes to drinking alcohol. 
+
+
 ## Numerical Summarys 
 
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+
+the back row is different with their mean whith having 9.6. the middle row has 3.2. the first row las the least mean with 1.8
+
 ## Inferential Tests
+
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+we will reject the hypothesis, but we will seek clarification on which rows were different from other rows.
+
+```{r}
+plot(TukeyHSD(model1))
+```
+
+using the tukey box plot we can tell that the front is different from the back and the middle is different from tha back. however there is no difference between the back and the front.
 
 ## Conclusions
 
