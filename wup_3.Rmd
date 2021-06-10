@@ -53,7 +53,7 @@ it appears that using these data we can reject the null hypothesis. based on the
 favstats(alcohol~Seat,data=davisdata)
 ```
 
-the back row is different with their mean with having 9.6. the middle row has 3.2. the first row las the least mean with 1.8
+The back row is different with their mean with having 9.6. the middle row has 3.2. the first row las the least mean with 1.8
 
 ## Inferential Tests
 
