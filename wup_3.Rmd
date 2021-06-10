@@ -53,7 +53,7 @@ it appears that using these data we can reject the null hypothesis. based on the
 favstats(alcohol~Seat,data=davisdata)
 ```
 
-The back row is different with their mean with having 9.6. the middle row has 3.2. the first row las the least mean with 1.8
+The back row is different with an average of 9.6. the middle row has 3.2. the first row has the least mean with 1.8
 
 ## Inferential Tests
 
@@ -68,8 +68,8 @@ we will reject the hypothesis, but we will seek clarification on which rows were
 plot(TukeyHSD(model1))
 ```
 
-using the tukey box plot we can tell that the front is different from the back and the middle is different from the back. however there is no difference between the back and the front.
+using the tukey box plot we can tell that the front is different from the back and the middle is different from the back. however there is no difference between the middle and the front.
 
 ## Conclusions
 
-
+my summary is that the back seat people consume more alcohol than the people who sit in the middle and the front seats. people in the back has an average of 9.6 when it comes to alcohol consumption and the middle has 3.2, the first 1.8 which means that the total average of the alcohol consumption for the people who sit in the frond and the middle hasn't exceeded the half of the average alcohol consumption for the back seat.  
